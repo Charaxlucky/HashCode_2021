@@ -16,6 +16,7 @@ Car::Car(std::string line, std::map<std::size_t, Street *> streets)
         ss >> nameOfTheseStreets[y];
         for (; streets[x]->_name != nameOfTheseStreets[y]; x++);
         path[y] = streets[x];
+        x = 0;
     }
 }
 
