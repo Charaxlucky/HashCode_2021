@@ -15,6 +15,7 @@
 #include <map>
 #include <algorithm>
 #include "Intersection.hpp"
+#include "Data.hpp"
 
 class Output {
 
@@ -22,6 +23,7 @@ class Output {
         Output();
         ~Output();
 
+        void display(Data *);
     std::size_t nbInter;
     std::map<std::size_t, Intersection *> inters;
 };

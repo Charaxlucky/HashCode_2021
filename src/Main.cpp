@@ -7,12 +7,14 @@
 
 #include "File.hpp"
 #include "Data.hpp"
+#include "Output.hpp"
 
 int main(int ac, char **av)
 {
-    if (ac < 1) {
+    if (ac == 2) {
         File file;
         Data data(file.open(av[1]));
-        data.display();
+        Output out;
+        out.display(&data);
     }
 }

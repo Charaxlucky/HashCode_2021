@@ -17,17 +17,16 @@ File::~File()
 
 std::map<std::size_t, std::string> File::open(std::string fileName)
 {
-    std::ifstream file;
+    std::ifstream file(fileName);
     std::map<std::size_t, std::string> tab;
 
-    file.open(fileName);
     if (!file)
         std::cerr << "Error: " << fileName << ": No such file or directory" << std::endl;
-    else
-        std::cout << file.rdbuf();
-    for (std::size_t i = 0; ; i++)
-        if (!std::getline(std::cin, tab[i]))
+    for (std::size_t i = 0; !file.eof(); i++) {
+        std::getline(file, tab[i]);
+        if (tab[i].length() == 0)
             break;
+    }
     file.close();
     return (tab);
 }

@@ -9,9 +9,10 @@
 
 Data::Data(std::map<std::size_t, std::string> file)
 {
-    std::stringstream ss(file[0]);
+    std::stringstream ss;
     std::size_t w = 1;
 
+    ss.str(file[0]);
     ss >> d;
     ss >> i;
     ss >> s;
@@ -19,12 +20,10 @@ Data::Data(std::map<std::size_t, std::string> file)
     ss >> f;
 
     for (std::size_t q = 0; q < s; q++, w++) {
-        Street stre(file[w]);
-        streets[q] = &stre;
+        streets[q] = new Street(file[w]);
     }
     for (std::size_t q = 0; q < v; q++, w++) {
-        Car carr(file[w], streets);
-        cars[q] = &carr;
+        cars[q] = new Car(file[w], streets, s);
     }
 }
 
@@ -40,4 +39,11 @@ void Data::display(void)
             std::cout << " " << it->second->nameOfTheseStreets[y];
         std::cout << std::endl;
     }
+}
+
+void Data::manageThem(void)
+{
+/*    for (std::size_t y = 0; y < v; y++) {
+        cars[y];
+    }*/
 }

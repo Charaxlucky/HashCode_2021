@@ -23,6 +23,7 @@ class Data
         Data(std::map<std::size_t, std::string>);
         ~Data() = default;
         void display(void);
+        void manageThem(void);
 
 // Variables
     std::size_t d;
