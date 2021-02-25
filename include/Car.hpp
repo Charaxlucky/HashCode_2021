@@ -14,13 +14,15 @@
 #include <map>
 #include <sstream>
 #include <algorithm>
+#include "Street.hpp"
 
 class Car
 {
     public:
-        Car(std::string line);
+        Car(std::string line, std::map<std::size_t, Street *>);
         ~Car();
 
     std::size_t nbStreets;
     std::map<std::size_t, std::string> nameOfTheseStreets;
+    std::map<std::size_t, Street *> path;
 };

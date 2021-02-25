@@ -23,7 +23,7 @@ Data::Data(std::map<std::size_t, std::string> file)
         streets[q] = &stre;
     }
     for (std::size_t q = 0; q < v; q++, w++) {
-        Car carr(file[w]);
+        Car carr(file[w], streets);
         cars[q] = &carr;
     }
 }
