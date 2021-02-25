@@ -19,5 +19,5 @@ class File
     public:
         File();
         ~File();
-        std::map<int, std::string> open(std::string fileName);
+        std::map<std::size_t, std::string> open(std::string fileName);
 };

@@ -20,8 +20,9 @@
 class Data
 {
     public:
-        Data(std::map<int, std::string>);
-        ~Data();
+        Data(std::map<std::size_t, std::string>);
+        ~Data() = default;
+        void display(void);
 
 // Variables
     std::size_t d;
@@ -31,8 +32,8 @@ class Data
     std::size_t f;
 
 // All streets
-    std::map<int, Street *> streets;
+    std::map<std::size_t, Street *> streets;
 
 // All cars
-    std::map<int, Car *> cars;
+    std::map<std::size_t, Car *> cars;
 };

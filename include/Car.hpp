@@ -12,6 +12,7 @@
 #include <iostream>
 #include <ostream>
 #include <map>
+#include <sstream>
 #include <algorithm>
 
 class Car
@@ -21,5 +22,5 @@ class Car
         ~Car();
 
     std::size_t nbStreets;
-    std::map<int, std::string> nameOfTheseStreets;
+    std::map<std::size_t, std::string> nameOfTheseStreets;
 };

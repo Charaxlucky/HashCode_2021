@@ -12,7 +12,7 @@ INCLUDE	=	include
 
 HFILE	=	$(wildcard $(INCLUDE)/*.hpp)
 
-NAME	=	nanotekspice
+NAME	=	program
 
 INCLUDES	=	$(foreach d, $(INCLUDE), -I$d)
 
