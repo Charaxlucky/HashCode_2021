@@ -10,8 +10,9 @@
 
 int main(int ac, char **av)
 {
-    File file;
-    Data data(file.open(av[1]));
-
-    data.display();
+    if (ac < 1) {
+        File file;
+        Data data(file.open(av[1]));
+        data.display();
+    }
 }
